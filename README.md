@@ -1,0 +1,2 @@
+# JS-assignments
+practice purpose
