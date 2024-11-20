@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<div id="main">
+    <img id="img1">
+    <h3 id="name"></h3>
+    <h3 id="idno"></h3>
+    <h3 id="designation"></h3>
+    <h3 id="mail"></h3>
+
+</div>
+<script>
+    let x=document.getElementById("main")
+    x.style.border="2px solid"
+    x.style.height="290px"
+    x.style.width="200px"
+    x.style.borderRadius="25px"
+    x.style.padding="0.5rem"
+    x.style.fontSize="0.7rem"
+    x.style.textAlign="center"
+    x.style.backgroundColor="lightpink"
+    x.style.marginLeft="40px"
+    x.style.marginTop="5rem"
+
+    let y=document.getElementById("img1")
+    y.setAttribute("src","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHTzksJecmQMX682-K9ZJb5KQ6rLNhfsLoTg&s")
+    y.style.height="120px"
+    y.style.width="120px"
+    y.style.borderRadius="150px"
+    //y.style.marginLeft="12px"
+    y.style.marginTop="5px"
+
+    let z=document.getElementById("name")
+    z.innerHTML="Name: Rizwana"
+
+
+    let p=document.getElementById("idno")
+    p.innerHTML="ID no: 12345"
+
+
+    let q=document.getElementById("designation")
+    q.innerHTML="Designation: Software Developer"
+
+    let r=document.getElementById("mail")
+    r.innerHTML="Email: sample@gmail.com"
+
+
+
+</script>
+    
+</body>
+</html>
