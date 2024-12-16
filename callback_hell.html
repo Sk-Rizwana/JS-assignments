@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    console.log("Welcome to the Pizza Delivery System!");
+
+function placeOrder(callback) {
+    setTimeout(() => {
+        console.log("1. Order placed!");
+        callback();
+    }, 1000);
+}
+
+function preparePizza(callback) {
+    setTimeout(() => {
+        console.log("2. Pizza is being prepared.");
+        callback();
+    }, 2000);
+}
+
+function bakePizza(callback) {
+    setTimeout(() => {
+        console.log("3. Pizza is baking in the oven.");
+        callback();
+    }, 3000);
+}
+
+function packPizza(callback) {
+    setTimeout(() => {
+        console.log("4. Pizza is being packed.");
+        callback();
+    }, 1000);
+}
+
+function deliverPizza(callback) {
+    setTimeout(() => {
+        console.log("5. Pizza delivered to the customer!");
+        callback();
+    }, 2000);
+}
+
+// Callback Hell
+placeOrder(() => {
+    preparePizza(() => {
+        bakePizza(() => {
+            packPizza(() => {
+                deliverPizza(() => {
+                    console.log("Enjoy your pizza!");
+                });
+            });
+        });
+    });
+});
+
+   </script>
+</body>
+</html>
