@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <form id="form">
+      <input type="text" id="ip1" placeholder="add to do" />
+      <input type="submit" value="add" />
+    </form>
+
+    <ul id="list"></ul>
+
+    <script>
+      let form = document.getElementById("form");
+      let ip = document.getElementById("ip1");
+      let list = document.getElementById("list");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        let listitem = document.createElement("li");
+        listitem.innerText = ip1.value;
+        list.appendChild(listitem);
+        ip1.value="";
+      });
+    </script> -->
+
+    <style>
+      body{
+        color:mediumblue;
+        font-style: italic;
+        font-weight: bold;
+        font-size:20px;
+        display: flex;
+        justify-content: center;
+        padding:3rem;
+      }
+      #list li{
+        padding:5px;
+      }
+      input[type=text]{
+        height:25px;
+        width:200px;
+      }
+      input[type=submit]{
+        height:28px;
+        width:50px;
+        cursor: pointer;
+        background-color: cornflowerblue;
+        color: aliceblue;
+        border: none;
+      }
+     
+    </style>
+
+    <div id="main">
+      <form id="form">
+        <input type="text" id="ip" placeholder="add to do">
+        <input type="submit" value="add">
+      </form>
+      <ul id="list"></ul>
+    </div>
+    
+    <script>
+      let form=document.getElementById("form")
+      let ip=document.getElementById("ip")
+      let list=document.getElementById("list")
+
+      form.addEventListener("submit",(e)=>{
+        e.preventDefault()
+      //creating one list item
+        let listItem=document.createElement("li")
+      //inserting input text into the list item 
+        listItem.innerText=ip.value +" "
+      //creating one button
+        let btn=document.createElement("button")
+        btn.style.backgroundColor="red"
+        btn.style.cursor="pointer"
+        btn.style.borderRadius="20px"
+        btn.style.height="25px"
+        btn.style.width="55px"
+        btn.style.border="none"
+        btn.style.marginLeft="1rem"
+        btn.addEventListener("click",()=>{
+          list.removeChild(listItem)
+        })
+        //changingthe button name
+          btn.innerHTML="Delete"
+          //inserting button into the list item
+          listItem.appendChild(btn)
+          //inserting list item into the list 
+          list.appendChild(listItem)
+          //empty input value
+          ip.value=" "
+
+      })
+    </script>
+  </body>
+</html>
