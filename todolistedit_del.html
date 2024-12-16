@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+    <style>
+      body {
+        font-style: italic;
+        font-weight: bold;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        padding: 3rem;
+      }
+      #list li {
+        padding: 5px;
+      }
+      input[type="text"] {
+        height: 25px;
+        width: 200px;
+      }
+      input[type="submit"] {
+        height: 28px;
+        width: 50px;
+        cursor: pointer;
+        background-color: cornflowerblue;
+        color: aliceblue;
+        border: none;
+      }
+      button {
+        margin-left: 1rem;
+        height: 25px;
+        width: 55px;
+        border: none;
+        cursor: pointer;
+        border-radius: 20px;
+        color: white;
+        font-size: 14px;
+      }
+      .delete-btn {
+        background-color: rgb(242, 106, 106);
+      }
+      .edit-btn {
+        background-color: rgb(126, 195, 126);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <form id="form">
+        <input type="text" id="ip" placeholder="Add todo">
+        <input type="submit" value="Add">
+      </form>
+      <ul id="list"></ul>
+    </div>
+
+    <script>
+      const form = document.getElementById("form");
+      const ip = document.getElementById("ip");
+      const list = document.getElementById("list");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        // Create a list item
+        const listItem = document.createElement("li");
+
+        // Insert input text into the list item
+        const taskText = document.createElement("span");
+        taskText.innerText = ip.value;
+        listItem.appendChild(taskText);
+
+        // Create the delete button
+        const deleteBtn = document.createElement("button");
+        deleteBtn.className = "delete-btn";
+        deleteBtn.innerText = "Delete";
+        deleteBtn.addEventListener("click", () => {
+          if (confirm("Are you sure you want to delete this task?")) {
+            list.removeChild(listItem);
+          }
+        });
+
+        // Create the edit button
+        const editBtn = document.createElement("button");
+        editBtn.className = "edit-btn";
+        editBtn.innerText = "Edit";
+        editBtn.addEventListener("click", () => {
+          const newTask = prompt("Edit your task:", taskText.innerText);
+          if (newTask !== null && newTask.trim() !== "") {
+            taskText.innerText = newTask.trim();
+          }
+        });
+
+        // Add buttons to the list item
+        listItem.appendChild(editBtn);
+        listItem.appendChild(deleteBtn);
+
+        // Add the list item to the list
+        list.appendChild(listItem);
+
+        // Clear the input value
+        ip.value = "";
+      });
+    </script>
+  </body>
+</html>
